@@ -1,0 +1,28 @@
+<section class="section">
+  <div class="container">
+    <div *ngIf="lunch && attendee">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Name..." [(ngModel)]="attendee.name">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Food choice</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Food choice..." [(ngModel)]="attendee.choice">
+        </div>
+      </div>
+      <div class="buttons">
+        <a routerLink="/lunch/{{lunch.navigationUrl}}" class="button">Back</a>
+        <a class="button is-dark" (click)="addAttendee()">Save</a>
+      </div>
+    </div>
+    <div *ngIf="!lunch && !attendee && !isLoading">
+      Oops, that lunch or attendee doesn't appear to exist...
+      <div class="back-button-wrapper">
+        <a routerLink="" class="button">Back</a>
+      </div>
+    </div>
+  </div>
+</section>

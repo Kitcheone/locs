@@ -1,0 +1,47 @@
+@import 'src/app/global';
+
+.home-wrapper {
+    padding-top: 35vh;
+    text-align: center;
+    height: 100vh;
+    background-color: #212C3D;
+    color: white;
+}
+
+.lunch-code-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.lunch-code-input {
+    color: white;
+    background-color: #444E5E;
+    border: none;
+    padding: 10px;
+    width: 220px;
+    @include border-radius(3px);
+    &:focus {
+        outline: none;
+    }
+    &::placeholder {
+        color: #838D9C;
+    }
+}
+
+.lunch-code-search {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+}
+
+.horizontal-divider {
+    height: 0;
+    width: 50px;
+    border: 1px solid #444E5E;
+    display: inline-block;
+    margin: 25px 0;
+    vertical-align: top;
+}

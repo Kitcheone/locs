@@ -1,0 +1,31 @@
+<div class="lunch-wrapper">
+    <section class="hero lunch-hero">
+        <div class="hero-body">
+            <div class="container">
+                <div class="lunch-header">
+                    New lunch
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="field">
+                <label class="label">Location</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Where is the lunch happening?" [(ngModel)]="lunch.location">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Menu</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Link to the menu, if you have it" [(ngModel)]="lunch.menuUrl">
+                </div>
+            </div>
+            <div class="buttons">
+                <a routerLink="" class="button">Back</a>
+                <a class="button is-dark" (click)="create()">Create lunch</a>
+            </div>
+        </div>
+    </section>
+</div>

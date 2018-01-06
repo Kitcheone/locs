@@ -1,0 +1,12 @@
+<div class="home-wrapper">
+    <div class="lunch-code-wrapper">
+        <input class="lunch-code-input" type="text" [(ngModel)]="lunchCode" placeholder="Enter lunch code" (keyup.enter)="goToLunch()">
+        <a class="lunch-code-search" routerLink="/lunch/{{lunchCode}}">
+            <i class="icon ion-chevron-right"></i>
+        </a>
+    </div>
+    <div class="horizontal-divider-wrapper">
+        <div class="horizontal-divider"></div>
+    </div>
+    <button type="button" routerLink="/new-lunch" class="btn-inverted">New lunch</button>
+</div>

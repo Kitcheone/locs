@@ -1,0 +1,19 @@
+<section class="hero lunch-hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="lunch-header">
+        <div class="lunch-location">
+          Lunch at: {{lunch?.location}}
+        </div>
+        <div class="invite-summary">
+          Invite others using code
+          <span class="invite-code-block" ngxClipboard [cbContent]="url">{{lunch?.navigationUrl}}</span>
+        </div>
+        <div class="lunch-menu-url" *ngIf="lunch && lunch.menuUrl">
+          Check out the menu
+          <a class="menu-url" href="{{lunch.menuUrl}}" target="_blank">here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

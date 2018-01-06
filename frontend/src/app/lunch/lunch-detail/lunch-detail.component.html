@@ -1,0 +1,49 @@
+<section class="section">
+  <div class="container">
+    <div *ngIf="lunch">
+      <div class="attendees-header">
+        Attendees
+      </div>
+      <div class="attendee-cards-wrapper">
+        <div class="attendee-card" *ngFor="let attendee of lunch.attendees | orderBy: 'name'">
+          <div *ngIf="deletingAttendeeId != attendee.id">
+            <div class="attendee-name">
+              {{attendee.name}}
+            </div>
+            <div class="attendee-choice">
+              {{attendee.choice}}
+            </div>
+            <div class="attendee-actions">
+              <a routerLink="/lunch/{{lunch.navigationUrl}}/edit-attendee/{{attendee.id}}">
+                <i class="icon ion-edit"></i>
+              </a>
+              <a (click)="deletingAttendeeId = attendee.id">
+                <i class="icon ion-close"></i>
+              </a>
+            </div>
+          </div>
+          <div *ngIf="deletingAttendeeId == attendee.id">
+            Are you sure?
+            <div class="attendee-actions">
+              <a class="button" (click)="deletingAttendeeId = null">
+                Cancel
+              </a>
+              <a class="button is-dark" (click)="deleteAttendee(attendee.id)">
+                Delete
+              </a>
+            </div>
+          </div>
+        </div>
+        <a class="attendee-card add-attendee-card" routerLink="/lunch/{{lunch.navigationUrl}}/add-attendee">
+          <i class="icon ion-plus-circled"></i>
+        </a>
+      </div>
+    </div>
+    <div *ngIf="!lunch && !isLoading">
+      Oops, that lunch doesn't appear to exist...
+    </div>
+    <div class="buttons">
+      <a routerLink="" class="button">Home</a>
+    </div>
+  </div>
+</section>

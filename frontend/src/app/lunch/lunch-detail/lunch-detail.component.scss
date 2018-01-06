@@ -1,0 +1,60 @@
+@import 'src/app/global';
+
+.attendees-header {
+    text-transform: uppercase;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.attendee-cards-wrapper{
+    margin-bottom: 20px;    
+    .attendee-card {
+        width: 30%;
+        height: 150px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+        box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+        padding: 20px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 10px 10px 0;
+        overflow: hidden;
+        min-width: 300px;
+        position: relative;
+        .attendee-name {
+            font-size: 20px;
+            font-weight: bold;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .attendee-choice {
+            margin-bottom: 5px;
+            line-height: 24px;
+            max-height: 48px;
+            overflow: hidden;
+        }
+        .attendee-actions {
+            font-size: 25px;
+            position: absolute;
+            bottom: 8px;
+            right: 15px;
+        }
+        a:not(.button) {
+            color: #212C3D;
+            &:hover {
+                color: #444E5E;
+            }
+        }
+    }    
+    .add-attendee-card {
+        font-size: 40px;
+        line-height: 110px;
+        text-align: center;
+        vertical-align: middle;
+        color: #212C3D;
+        &:hover {
+            color: #444E5E;
+        }
+    }
+}

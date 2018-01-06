@@ -1,0 +1,58 @@
+@import 'src/app/global';
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('/assets/fonts/PT_Sans-Web-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('/assets/fonts/PT_Sans-Web-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+$primary: #212c3d;
+$variable-columns: false;
+
+body {
+    min-height: 100vh;
+    font-family: 'PT Sans';
+    color: #444E5E;
+}
+
+.btn {
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    font-size: 13px;
+    width: 220px;
+    background-color: #444E5E;
+    border: 2px solid #212C3D;
+    @include border-radius(3px);
+    @include transition(0.15s);
+    &:hover {
+        color: white;
+        border-color: #444E5E;
+        background-color: #838D9C;
+    }
+}
+
+.btn-inverted {
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    font-size: 13px;
+    width: 220px;
+    background: none;
+    border: 2px solid #444E5E;
+    @include border-radius(3px);
+    @include transition(0.15s);
+    &:hover {
+        color: white;
+        border-color: white;
+        background-color: #838D9C;
+    }
+}
