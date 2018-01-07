@@ -13,7 +13,7 @@
         public AttendeeMapping()
         {
             this.PrimaryKey(x => x.Id, false);
-            this.TableName("Attendee");
+            this.TableName("[Locs].[Attendee]");
         }
     }
 }

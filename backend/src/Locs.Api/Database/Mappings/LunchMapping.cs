@@ -12,7 +12,7 @@
         public LunchMapping()
         {
             this.PrimaryKey(x => x.Id, false);
-            this.TableName("Lunch");
+            this.TableName("[Locs].[Lunch]");
             this.Columns(x =>
             {
                 x.Many(y => y.Attendees).WithName("Id").Reference(y => y.LunchId);

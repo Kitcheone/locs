@@ -15,11 +15,14 @@ var runtime = Argument("runtime", "win10-x64");
 var projectDir = Directory("./src/Locs.Api");
 var buildDir = Directory("./src/Locs.Api/bin") + Directory(configuration);
 var objectDir = Directory("./src/Locs.Api/obj") + Directory(configuration);
-var publishDir = Directory("./publish");
+var publishDir = Directory("../../publish");
 
 // Define projects
 var projectFile = File("./src/Locs.Api/Locs.Api.csproj");
 var testProjectFile = File("./src/Locs.Api.Tests/Locs.Api.Tests.csproj");
+
+// Addins
+#addin "Cake.WebDeploy"
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
@@ -55,18 +58,22 @@ Task("Build")
 });
 
 Task("Publish")
-    .IsDependentOn("Build")
+    .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
     {
-        var settings = new DotNetCorePublishSettings
-        {
-            Framework = framework,
-            Configuration = configuration,
-            OutputDirectory = publishDir,
-            Runtime = runtime
-        };
- 
-        DotNetCorePublish(projectDir, settings);
+    var settings = new DotNetCoreBuildSettings
+    {
+        Framework = framework,
+        Configuration = configuration,
+        OutputDirectory = buildDir,
+            MSBuildSettings = new DotNetCoreMSBuildSettings()
+                .WithProperty("OutputPath", publishDir)
+                .WithProperty("DeployOnBuild", "true")
+                .WithProperty("WebPublishMethod", "Package")
+                .WithProperty("PackageAsSingleFile", "true")
+    };
+
+    DotNetCoreBuild(projectFile, settings);
     });
 
 Task("Run-Unit-Tests")

@@ -20,7 +20,7 @@
             string candidate = this.GenerateCandidate();
             using (this.db)
             {
-                var urlsToCheck = this.db.Fetch<string>("select navigationUrl from lunch");
+                var urlsToCheck = this.db.Fetch<string>("select navigationUrl from locs.lunch");
                 while (urlsToCheck.Contains(candidate))
                 {
                     candidate = this.GenerateCandidate();

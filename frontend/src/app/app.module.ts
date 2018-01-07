@@ -39,7 +39,7 @@ import { LunchDetailComponent } from './lunch/lunch-detail/lunch-detail.componen
     OrderModule
   ],
   providers: [
-    { provide: API_BASE_URL, useValue: 'https://localhost:62417/' },
+    { provide: API_BASE_URL, useValue: 'http://localhost:62417/' },
     apiClient.LunchesClient,
     apiClient.AttendeesClient
   ],
