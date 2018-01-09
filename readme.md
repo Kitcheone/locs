@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/qny8scc8pcmslwvp?svg=true)](https://ci.appveyor.com/project/Kitcheone/locs)
+
 # Lunch Ordering Collation System
 Built in Angular and ASP.NET Core.
 
