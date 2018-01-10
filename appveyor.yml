@@ -15,7 +15,7 @@ install:
   - cd ..
 
 build_script:
-  - ps: .\backend\build.ps1
+  - ps: .\backend\build.ps1 -Target Publish
   - cd frontend
   - yarn run ng build --prod
 
