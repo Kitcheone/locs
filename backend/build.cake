@@ -58,23 +58,19 @@ Task("Build")
 });
 
 Task("Publish")
-    .IsDependentOn("Restore-NuGet-Packages")
+    .IsDependentOn("Build")
     .Does(() =>
-    {
-    var settings = new DotNetCoreBuildSettings
+{
+    var settings = new DotNetCorePublishSettings
     {
         Framework = framework,
         Configuration = configuration,
-        OutputDirectory = buildDir,
-            MSBuildSettings = new DotNetCoreMSBuildSettings()
-                .WithProperty("OutputPath", publishDir)
-                .WithProperty("DeployOnBuild", "true")
-                .WithProperty("WebPublishMethod", "Package")
-                .WithProperty("PackageAsSingleFile", "true")
+        OutputDirectory = publishDir,
+        Runtime = runtime
     };
 
-    DotNetCoreBuild(projectFile, settings);
-    });
+    DotNetCorePublish(projectDir, settings);
+});
 
 Task("Run-Unit-Tests")
     .IsDependentOn("Build")
