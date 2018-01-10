@@ -15,6 +15,6 @@ install:
 build_script:
   - ps: .\backend\build.ps1
   - cd frontend
-  - ng build --prod
+  - yarn run ng build -- --prod
 
 test: off
