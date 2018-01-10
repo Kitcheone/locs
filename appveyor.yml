@@ -22,7 +22,7 @@ build_script:
 test: off
 
 artifacts:
-  - path: backend\publish\Locs.Api.zip
-    name: Api
+  - path: backend\publish
+    name: Backend
   - path: frontend\dist
     name: Frontend
