@@ -15,7 +15,7 @@ var runtime = Argument("runtime", "win10-x64");
 var projectDir = Directory("./src/Locs.Api");
 var buildDir = Directory("./src/Locs.Api/bin") + Directory(configuration);
 var objectDir = Directory("./src/Locs.Api/obj") + Directory(configuration);
-var publishDir = Directory("../../publish");
+var publishDir = Directory("./publish");
 
 // Define projects
 var projectFile = File("./src/Locs.Api/Locs.Api.csproj");
