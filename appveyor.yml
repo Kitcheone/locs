@@ -10,11 +10,13 @@ platform:
 
 install:
   - ps: Install-Product node $env:nodejs_version
+  - cd frontend
   - yarn install
+  - cd ..
 
 build_script:
   - ps: .\backend\build.ps1
   - cd frontend
-  - yarn run ng build -- --prod
+  - yarn run ng build --prod
 
 test: off
