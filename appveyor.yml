@@ -20,3 +20,9 @@ build_script:
   - yarn run ng build --prod
 
 test: off
+
+artifacts:
+  - path: backend\publish\Locs.Api.zip
+    name: Api
+  - path: frontend\dist
+    name: Frontend
