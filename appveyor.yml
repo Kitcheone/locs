@@ -1,5 +1,20 @@
 version: 1.0.{build}
+
 image: Visual Studio 2017
+
+environment:
+  nodejs_version: "6"
+
+platform:
+  - x64
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - yarn install --no-progress
+
 build_script:
-- ps: .\backend\build.ps1
+  - ps: .\backend\build.ps1
+  - cd frontend
+  - yarn ng -- build --prod --aot --no-progress
+  
 test: off

@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import * as apiClient from '../api/apiclient';
 import { API_BASE_URL } from '../api/apiclient';
 
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
 import { LunchComponent } from './lunch/lunch.component';
 import { HomeComponent } from './home/home.component';
@@ -39,7 +41,7 @@ import { LunchDetailComponent } from './lunch/lunch-detail/lunch-detail.componen
     OrderModule
   ],
   providers: [
-    { provide: API_BASE_URL, useValue: 'http://localhost:62417/' },
+    { provide: API_BASE_URL, useValue: environment.apiUrl },
     apiClient.LunchesClient,
     apiClient.AttendeesClient
   ],
