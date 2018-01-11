@@ -39,11 +39,10 @@
         </a>
       </div>
     </div>
-    <div *ngIf="!lunch && !isLoading">
     <div *ngIf="!lunch && !isLoading" class="no-lunch-error-wrapper">
       Oops, that lunch doesn't appear to exist...
     </div>
-    <div class="buttons">
+    <div class="buttons" *ngIf="!isLoading">
       <a routerLink="" class="button">Home</a>
     </div>
   </div>
