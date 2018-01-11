@@ -23,13 +23,6 @@
         }
 
         [HttpGet]
-        [Route("api/lunches/test")]
-        public int Test()
-        {
-            return 1;
-        }
-
-        [HttpGet]
         [Route("api/lunches")]
         public IEnumerable<Lunch> Get()
         {
