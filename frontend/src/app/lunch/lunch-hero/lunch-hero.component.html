@@ -1,7 +1,8 @@
 <section class="hero lunch-hero">
   <div class="hero-body">
-    <div class="container">
-      <div class="lunch-header">
+    <div class="container"> 
+      <app-loading-dots *ngIf="isLoading"></app-loading-dots>     
+      <div class="lunch-header" *ngIf="!isLoading">
         <div class="lunch-location">
           Lunch at: {{lunch?.location}}
         </div>

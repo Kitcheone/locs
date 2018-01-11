@@ -20,6 +20,7 @@ import { NewLunchComponent } from './new-lunch/new-lunch.component';
 import { AttendeeComponent } from './lunch/attendee/attendee.component';
 import { LunchHeroComponent } from './lunch/lunch-hero/lunch-hero.component';
 import { LunchDetailComponent } from './lunch/lunch-detail/lunch-detail.component';
+import { LoadingDotsComponent } from './loading-dots/loading-dots.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { LunchDetailComponent } from './lunch/lunch-detail/lunch-detail.componen
     NewLunchComponent,
     AttendeeComponent,
     LunchHeroComponent,
-    LunchDetailComponent
+    LunchDetailComponent,
+    LoadingDotsComponent
   ],
   imports: [
     BrowserModule,
