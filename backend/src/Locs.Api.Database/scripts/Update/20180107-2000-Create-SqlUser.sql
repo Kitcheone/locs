@@ -14,5 +14,12 @@ BEGIN
 END
 GO
 
-CREATE SCHEMA [Locs]
-GO
+-- Create schema
+IF NOT EXISTS (
+SELECT  schema_name
+FROM    information_schema.schemata
+WHERE   schema_name = 'Locs' ) 
+
+BEGIN
+EXEC sp_executesql N'CREATE SCHEMA Locs'
+END
