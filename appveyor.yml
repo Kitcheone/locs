@@ -26,3 +26,9 @@ artifacts:
     name: Backend
   - path: frontend\dist
     name: Frontend
+
+deploy:
+  - provider: Environment
+    name: Backend
+  - provider: Environment
+    name: Frontend
