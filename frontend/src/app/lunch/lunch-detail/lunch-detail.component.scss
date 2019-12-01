@@ -10,7 +10,7 @@
     margin-bottom: 20px;   
     .attendee-card {
         width: 30%;
-        height: 150px;
+        min-height: 150px;
         border-radius: 5px;
         -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
         box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
@@ -29,9 +29,9 @@
             overflow: hidden;
         }
         .attendee-choice {
-            margin-bottom: 5px;
+            margin-bottom: 30px;
             line-height: 24px;
-            max-height: 48px;
+            max-height: 96px;
             overflow: hidden;
         }
         .attendee-actions {
